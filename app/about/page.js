@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <div className="flex flex-col items-center justify-center px-6 py-16 text-white bg-gradient-to-b from-purple-800 to-blue-900 min-h-screen">
@@ -43,12 +45,12 @@ export default function About() {
 
       {/* Call to Action */}
       <div className="mt-16">
-        <a
+        <Link
           href="/login"
           className="inline-block px-8 py-3 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg text-white font-medium hover:from-purple-700 hover:to-blue-600"
         >
           Start Now
-        </a>
+        </Link>
       </div>
     </div>
   );
