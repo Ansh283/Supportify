@@ -68,7 +68,7 @@ const PaymentPage = ({ username }) => {
     let a = await initiate(amount, username, paymentform);
     let orderId = a.id;
     var options = {
-      key: currentUser.razorpayid, // Enter the Key ID generated from the Dashboard
+      key: currentUser.razorpayid || process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
       amount: amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: "INR",
       name: "Get Me a Chai", //your business name
@@ -236,7 +236,7 @@ const PaymentPage = ({ username }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div>                                          
       </>
     </div>
   );
