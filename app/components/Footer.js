@@ -4,8 +4,8 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className='bg-gray-900 h-16 text-white flex items-center justify-center'>
-      <p className='text-center'>
-        Copyright &copy; {year} Get Me A Chai - All rights reserved
+      <p className='text-center Montserrat'>
+        Copyright &copy; {year} Supportify - All rights reserved
       </p>
     </footer>
   );

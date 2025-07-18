@@ -25,7 +25,7 @@ const Navbar = () => {
     <nav className="bg-gray-900 text-white flex justify-between items-center px-4 md:h-16 flex-col md:flex-row">
       <Link href={"/"}>
         <div className="flex text-center justify-center">
-          <div className="logo font-bold text-lg my-3.5 md:my-7 text-center justify-center">GetMeAChai!</div>
+          <div className="logo font-bold text-lg my-3.5 md:my-7 text-center justify-center">Supportify!</div>
           <span>
             <img className="my-1 md:my-4" width={48} src="balu-egg.webp" alt="logo" />
           </span>

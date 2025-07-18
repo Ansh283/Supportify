@@ -4,15 +4,15 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col justify-center items-center text-white  h-[44vh] px-5 md:px-0 text-xs md:text-base">
-        <div className="font-bold md:text-3xl text-xl flex gap-2 text-center">
-          <div className="text-center mt-6">
-          Get Me a Chai
+        <div className="font-bold md:text-3xl text-xl flex gap-1 text-center">
+          <div className="text-center text-4xl mt-6">
+          Supportify
           </div>
           <span>
-            <img className="invertImg w-18" src="/balu-egg.webp"></img>
+            <img className="invertImg w-21" src="/balu-egg.webp"></img>
           </span>
         </div>
-        <p className="py-4 pt-0 text-center md:text-left">
+        <p className="py-4 pt-0 text-center md:text-2xl md:text-left">
           A crowdfunding platform for creators. Get funded by your fans and
           followers. Start now!
         </p>
@@ -151,7 +151,7 @@ export default function Home() {
 
         <div className="w-full max-w-2xl aspect-video">
           <iframe
-            src="https://www.youtube.com/embed/K052tdPqa5U?si=Of6EODh71aXUeqCg"
+            src="https://www.youtube.com/embed/es5ThfPNokI?si=FLZ3yEh3lGuMRkt9"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
