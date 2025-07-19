@@ -8,6 +8,8 @@ import mongoose from "mongoose";
 import connectDb from '@/app/db/connectDb';
 import User from '@/app/models/User';
 import Payment from '@/app/models/Payment';
+import GoogleProvider from 'next-auth/providers/google';
+
  
 
 export const authoptions =  NextAuth({
@@ -25,10 +27,10 @@ export const authoptions =  NextAuth({
     //     clientId: process.env.FACEBOOK_ID,
     //     clientSecret: process.env.FACEBOOK_SECRET
     //   }),
-    //   GoogleProvider({
-    //     clientId: process.env.GOOGLE_ID,
-    //     clientSecret: process.env.GOOGLE_SECRET
-    //   }),
+      GoogleProvider({
+        clientId: process.env.GOOGLE_ID,
+        clientSecret: process.env.GOOGLE_SECRET
+      }),
     //   // Passwordless / email sign in
     //   EmailProvider({
     //     server: process.env.MAIL_SERVER,

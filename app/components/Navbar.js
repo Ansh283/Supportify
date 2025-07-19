@@ -22,17 +22,43 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-gray-900 text-white flex justify-between items-center px-4 md:h-16 flex-col md:flex-row">
+    <nav className="bg-gray-900 text-white flex justify-between items-center px-4 md:h-16">
       <Link href={"/"}>
-        <div className="flex text-center justify-center">
-          <div className="logo font-bold text-lg my-3.5 md:my-7 text-center justify-center">Supportify!</div>
+        <div className="flex items-center">
+          <div className="logo font-bold text-lg my-3.5 md:my-7">
+            Supportify!
+          </div>
           <span>
             <img className="my-1 md:my-4" width={48} src="balu-egg.webp" alt="logo" />
           </span>
         </div>
       </Link>
 
-      <div className="relative flex flex-col md:block ">
+      {/* Hamburger for mobile */}
+      <button
+        onClick={() => setShowdropdown(!showdropdown)}
+        className="md:hidden p-2"
+      >
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
+      <div
+        className={`${
+          showdropdown ? "block" : "hidden"
+        } md:flex flex-col md:flex-row md:items-center relative`}
+      >
         {session && (
           <>
             <button
@@ -60,7 +86,6 @@ const Navbar = () => {
               </svg>
             </button>
 
-            {/* Dropdown */}
             <div
               id="dropdown"
               ref={dropdownRef}
@@ -114,7 +139,7 @@ const Navbar = () => {
 
         {!session && (
           <Link href={"/login"}>
-            <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center gap-1">
+            <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center gap-1 m-2">
               Login
             </button>
           </Link>
