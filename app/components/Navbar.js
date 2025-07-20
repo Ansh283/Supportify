@@ -12,24 +12,18 @@ const Navbar = () => {
 
       <Link className="logo font-bold text-lg flex justify-center items-center" href={"/"}>
         <img className='invertImg' src="balu-egg.webp" width={44} alt="" />
-        <span className='text-xl md:text-base my-3 md:my-0'>Get Me a Chai!</span>
+        <span className='text-xl md:text-2xl  my-3 md:my-0'>Supportify!</span>
       </Link>
 
       <div className='relative flex justify-center items-center md:block gap-4'>
         {session && <>
           <div
             className="relative inline-block"
-            tabIndex={0}
-            onBlur={() => {
-              setTimeout(() => {
-                setShowdropdown(false)
-              }, 100);
-            }}
+            onMouseLeave={() => setShowdropdown(false)}
           >
             <button
               onClick={() => setShowdropdown(!showdropdown)}
               id="dropdownDefaultButton"
-              data-dropdown-toggle="dropdown"
               className="text-white mx-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               type="button"
             >
