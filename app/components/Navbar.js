@@ -22,50 +22,26 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-gray-900 text-white flex justify-between items-center px-4 md:h-16">
+    <nav className="bg-gray-900 text-white flex justify-between items-center px-4 py-4">
       <Link href={"/"}>
         <div className="flex items-center">
-          <div className="logo font-bold text-lg my-3.5 md:my-7">
+          <div className="logo font-bold text-lg mr-2">
             Supportify!
           </div>
           <span>
-            <img className="my-1 md:my-4" width={48} src="balu-egg.webp" alt="logo" />
+            <img className="ml-2" width={48} src="balu-egg.webp" alt="logo" />
           </span>
         </div>
       </Link>
 
-      {/* Hamburger for mobile */}
-      <button
-        onClick={() => setShowdropdown(!showdropdown)}
-        className="md:hidden p-2"
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
-
-      <div
-        className={`${
-          showdropdown ? "block" : "hidden"
-        } md:flex flex-col md:flex-row md:items-center relative`}
-      >
+      <div className="flex items-center relative">
         {session && (
           <>
             <button
               id="dropdownDefaultButton"
               data-dropdown-toggle="dropdown"
               onClick={() => setShowdropdown(!showdropdown)}
-              className="text-white md:m-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white mx-2 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               type="button"
             >
               Welcome {session.user.email}
@@ -91,7 +67,7 @@ const Navbar = () => {
               ref={dropdownRef}
               className={`z-10 ${
                 showdropdown ? "" : "hidden"
-              } absolute left-[105px] bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700`}
+              } absolute top-full right-0 mt-2 bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700`}
             >
               <ul
                 className="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -125,21 +101,19 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-          </>
-        )}
 
-        {session && (
-          <button
-            className="text-white bg-gradient-to-br m-2 from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-            onClick={() => signOut()}
-          >
-            Log Out
-          </button>
+            <button
+              className="text-white bg-gradient-to-br mx-2 from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+              onClick={() => signOut()}
+            >
+              Log Out
+            </button>
+          </>
         )}
 
         {!session && (
           <Link href={"/login"}>
-            <button className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center gap-1 m-2">
+            <button className="text-white bg-gradient-to-br mx-2 from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
               Login
             </button>
           </Link>
